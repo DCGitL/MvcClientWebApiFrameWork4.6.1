@@ -10,15 +10,16 @@ namespace NoneCoreMvcWebApiClient.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            ScriptBundle scriptBndl = new ScriptBundle("~/bundles/scripts");
-            scriptBndl.Include("~/lib/jquery/jquery.js").Include("~/lib/jquery/validation/jquery.validate.js").Include("~/lib/jquery/validation/unobtrusive/jquery.validate.unobtrusive.js").Include("~/lib/bootstrap/js/bootstrap.js");
+            bundles.Add( new ScriptBundle("~/bundles/scripts").Include(
+             "~/lib/jquery/jquery.js",
+             "~/lib/jquery/validation/jquery.validate*",
+              "~/lib/jquery/validation/unobtrusive/jquery.validate.unobtrusive*",
+              "~/lib/bootstrap/js/bootstrap.js"
+             ));
+       
 
-            bundles.Add(scriptBndl);
-
-            scriptBndl = new ScriptBundle("~/bundles/bootstrap");
-            scriptBndl.Include("~/lib/bootstrap/css/bootstrap.css");
-
-            bundles.Add(scriptBndl);
+            bundles.Add( new StyleBundle("~/bundles/bootstrap").Include(
+             "~/lib/bootstrap/css/bootstrap.css"));
 
             BundleTable.EnableOptimizations = true;
 
