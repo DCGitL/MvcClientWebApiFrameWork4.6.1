@@ -53,7 +53,7 @@ namespace NoneCoreMvcWebApiClient.Controllers
                 }
 
 
-                return View(user);
+                return View("Index", user);
 
             }
 

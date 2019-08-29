@@ -117,7 +117,7 @@ namespace NoneCoreMvcWebApiClient.Controllers
 
         }
 
-        [HttpGet]
+       [HttpPost]
         public async Task<ActionResult> Delete(int id)
         {
             string token = getSessionToken();
