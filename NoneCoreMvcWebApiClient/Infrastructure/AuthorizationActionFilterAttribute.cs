@@ -17,7 +17,7 @@ namespace NoneCoreMvcWebApiClient.Infrastructure
             {
                 if (session["access_token"] == null)
                 {
-                    filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Index" } });
+                    filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Account" }, { "action", "Index" } });
                 }
 
             }

@@ -18,6 +18,11 @@ namespace NoneCoreMvcWebApiClient.Controllers
 
         private const string webapiUri = "http://webapiservices.com/";
         // GET: Employee
+
+          public ActionResult Index()
+        {
+            return RedirectToAction("GetEmployees");
+        }
    
         //R => Read employee
         public async Task<ActionResult> GetEmployees()
@@ -43,7 +48,9 @@ namespace NoneCoreMvcWebApiClient.Controllers
                     employees = readTask;
                 }
 
-                return View(employees);
+                var orderedEmployees = employees.OrderBy(o => o.FirstName);
+
+                return View(orderedEmployees);
             }
         }
 
