@@ -7,10 +7,10 @@
 }
 
 
-    @using (Html.BeginForm("Login","Login", FormMethod.Post ))
+    @using (Html.BeginForm("Login","Account", FormMethod.Post ))
     {
         @Html.AntiForgeryToken()
-            <span class="text-danger"> @ViewBag.statusCode</span>
+           
         <div class="form-horizontal">
           
             <hr />

@@ -14,7 +14,7 @@ namespace NoneCoreMvcWebApiClient.Controllers
     public class AccountController : Controller
     {
         private const string webapiUri = "http://webapiservices.com/";
-        public ActionResult Index() => View(new UserInfo());
+        public ActionResult Login() => View(new UserInfo());
 
 
         [HttpPost]
@@ -49,11 +49,12 @@ namespace NoneCoreMvcWebApiClient.Controllers
                 }
                 else
                 {
-                    ViewBag.statusCode = responseMessage.StatusCode;
+                   
+                    ModelState.AddModelError("", "Unable to login check your username and password or register if you don't have an account");
                 }
 
 
-                return View("Index", user);
+                return View(user);
 
             }
 
