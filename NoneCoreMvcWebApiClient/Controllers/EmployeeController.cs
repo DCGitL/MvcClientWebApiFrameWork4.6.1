@@ -205,6 +205,10 @@ namespace NoneCoreMvcWebApiClient.Controllers
             {
                 token = Session["access_token"].ToString();
             }
+            if (!string.IsNullOrEmpty(token))
+            {
+                ViewData["Login"] = HttpContext.Items["Login"];
+            }
             return token;
         }
 

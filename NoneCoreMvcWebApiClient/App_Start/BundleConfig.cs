@@ -19,7 +19,7 @@ namespace NoneCoreMvcWebApiClient.App_Start
        
 
             bundles.Add( new StyleBundle("~/bundles/bootstrap").Include(
-             "~/lib/bootstrap/css/bootstrap.css"));
+             "~/lib/bootstrap/css/bootstrap.min.css", new CssRewriteUrlTransform()));
 
             BundleTable.EnableOptimizations = true;
 

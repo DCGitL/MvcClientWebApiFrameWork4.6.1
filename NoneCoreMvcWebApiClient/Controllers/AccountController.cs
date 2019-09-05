@@ -59,5 +59,14 @@ namespace NoneCoreMvcWebApiClient.Controllers
             }
 
         }
+
+
+        public ActionResult Logout()
+        {
+            HttpContext.Session.Abandon();
+            return RedirectToAction("Login");
+        }
+
+
     }
 }

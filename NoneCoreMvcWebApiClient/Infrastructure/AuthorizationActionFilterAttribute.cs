@@ -19,7 +19,11 @@ namespace NoneCoreMvcWebApiClient.Infrastructure
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Account" }, { "action", "Login" } });
                 }
+                else
+                {
+                    filterContext.HttpContext.Items["Login"] = "true";
 
+                }
             }
 
             base.OnActionExecuting(filterContext);
